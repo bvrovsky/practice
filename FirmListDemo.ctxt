@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=project\ status
+comment0.target=void\ SetProjectStatus(FirmList,\ java.lang.String)
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2

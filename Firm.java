@@ -38,5 +38,3 @@ public class Firm {//сущность - фирма
     }
 }//Firm
     
-    
-  

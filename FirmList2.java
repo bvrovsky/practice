@@ -1,4 +1,4 @@
-public class FirmList2{//Сущность - Проект с фирмами
+public class FirmList2 implements FirmList{//Сущность - Проект с фирмами
 //В данном классе список фирм реализован на основе динамического связного списка
 //Класс описывает элемент динамического связного списка
 //Каждый экземпляр данного класса является началом списка следущих за ним связных элементов списка
@@ -24,11 +24,11 @@ private final static String FIRM_FORMAT_STRING=
         firm=fm; next=null;
     }
     //методы определяющие поведение элемента списка фирм
-    public void setName(String name){//назначить имя списку(проекту)
+    public void setListName(String name){//назначить имя списку(проекту)
         firm.setName(name);
     }
-    public String getName(){return firm.getName();}//вернуть имя списка
-    public int getNum(){//вернуть число фирм в списке
+    public String getListName(){return firm.getName();}//вернуть имя списка
+    public int getFirmNum(){//вернуть число фирм в списке
         //головой списка ялвяется текущий объект, т.е. объект запустивший метод (this)
         int num=0;//число элементов
         FirmList2 el=next;//перешли к элементу, на который указывает голова списка
@@ -42,7 +42,7 @@ private final static String FIRM_FORMAT_STRING=
         //вернуть из списка фирму с заданным ключом
         //головой списка является текущий объект
         if (next==null) return null;//если список пуст
-        FirmList2 el=next;//el - ссылка на очередной элемент списка
+        FirmList2 el=next;//уд - ссылка на очередной элемент списка
         while (el !=null){//пока в списке есть элементы
             if (el.firm.getId()==id) return el.firm;//фирма найдена
             //перейти к следующему элементу списка
@@ -52,7 +52,7 @@ private final static String FIRM_FORMAT_STRING=
     }
     //сформировать строку описания объекта 
     public String toString(){
-        return String.format(FIRM_FORMAT_STRING, firm.getName(), getNum());
+        return String.format(FIRM_FORMAT_STRING, firm.getName(), getFirmNum());
     }
     //добавить фирму в список фирм
     public boolean addFirm(Firm firm){
@@ -151,25 +151,7 @@ private final static String FIRM_FORMAT_STRING=
             i=i+1;
         }//while
     }//putFirmList()
-    //сортировка
-public void sortBaseSalary() {
-//головой списка является текущий объект
-boolean flag = true;
-    while (!flag) {
-        FirmList2 el=this;//el.next-очередной элемент списка
-        FirmList2 old = el.next;
-        flag = false;
-        while (el.next !=null){//пока в списке есть элементы
-            if (el.firm.getBaseSalary()>el.next.firm.getBaseSalary())
-            old=el;
-            el=el.next;
- 
-                flag = true;
-        }
-    el=el.next;
-    }
-}
-public FirmList2 sortByBaseSalary(){
+    public FirmList2 sortByBaseSalary(){
     FirmList2 el = next;
     FirmList2 temp = new FirmList2();
     FirmList2 list = new FirmList2("Отсортированный список");
@@ -193,11 +175,5 @@ public FirmList2 sortByBaseSalary(){
         }
     }
     return list;
-}                       
+}       
 }//FirmList2
-            
-            
-        
-            
-            
-    
