@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Firm
+comment1.params=
+comment1.target=Firm()
+comment10.params=numOfEmploy
+comment10.target=void\ setNumOfEmploy(int)
+comment11.params=baseSalary
+comment11.target=void\ setBaseSalary(double)
+comment12.params=
+comment12.target=java.lang.String\ toString()
+comment2.params=id\ name\ numOfEmploy\ baseSalary
+comment2.target=Firm(int,\ java.lang.String,\ int,\ double)
+comment3.params=fm
+comment3.target=Firm(Firm)
+comment4.params=
+comment4.target=int\ getId()
+comment5.params=
+comment5.target=java.lang.String\ getName()
+comment6.params=
+comment6.target=int\ getNumOfEmploy()
+comment7.params=
+comment7.target=double\ getBaseSalary()
+comment8.params=id
+comment8.target=void\ setId(int)
+comment9.params=name
+comment9.target=void\ setName(java.lang.String)
+numComments=13
